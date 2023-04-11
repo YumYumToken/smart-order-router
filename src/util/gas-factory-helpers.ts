@@ -1,8 +1,8 @@
 import { BigNumber } from '@ethersproject/bignumber';
-import { Protocol } from '@uniswap/router-sdk';
+import { Protocol } from '@yumyumswap/router-sdk';
 import { Currency, CurrencyAmount, Token, TradeType } from '@uniswap/sdk-core';
 import { Pair } from '@uniswap/v2-sdk/dist/entities';
-import { FeeAmount, Pool } from '@uniswap/v3-sdk';
+import { FeeAmount, Pool } from '@yumyumswap/swap-sdk';
 import _ from 'lodash';
 
 import { IV2PoolProvider } from '../providers';

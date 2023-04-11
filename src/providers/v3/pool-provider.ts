@@ -1,10 +1,10 @@
 import { BigNumber } from '@ethersproject/bignumber';
 import { Token } from '@uniswap/sdk-core';
-import { computePoolAddress, FeeAmount, Pool } from '@uniswap/v3-sdk';
+import { computePoolAddress, FeeAmount, Pool } from '@yumyumswap/swap-sdk';
 import retry, { Options as RetryOptions } from 'async-retry';
 import _ from 'lodash';
 
-import { IUniswapV3PoolState__factory } from '../../types/v3/factories/IUniswapV3PoolState__factory';
+import { IYumyumSwapPoolState__factory } from '../../types/v3/factories/IYumyumSwapPoolState__factory';
 import { ChainId } from '../../util';
 import { V3_CORE_FACTORY_ADDRESSES } from '../../util/addresses';
 import { log } from '../../util/log';
@@ -248,7 +248,7 @@ export class V3PoolProvider implements IV3PoolProvider {
         TReturn
       >({
         addresses: poolAddresses,
-        contractInterface: IUniswapV3PoolState__factory.createInterface(),
+        contractInterface: IYumyumSwapPoolState__factory.createInterface(),
         functionName: functionName,
         providerConfig,
       });

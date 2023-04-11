@@ -1,7 +1,7 @@
 import { Logger } from '@ethersproject/logger';
 import { flags } from '@oclif/command';
 import { Currency, Ether, Fraction, Percent } from '@uniswap/sdk-core';
-import { Position } from '@uniswap/v3-sdk';
+import { Position } from '@yumyumswap/swap-sdk';
 import dotenv from 'dotenv';
 import {
   ID_TO_CHAIN_ID,
