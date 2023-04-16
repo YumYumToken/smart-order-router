@@ -59,6 +59,8 @@ import {
   WBTC_MOONBEAM,
   WETH9,
   WNATIVE_ON,
+  USDC_BASE_GOERLI,
+  USDT_BASE_GOERLI,
 } from '../../../../src';
 import { WHALES } from '../../../test-util/whales';
 
@@ -2535,6 +2537,7 @@ describe('quote for other networks', () => {
     [ChainId.GNOSIS]: WBTC_GNOSIS,
     [ChainId.MOONBEAM]: WBTC_MOONBEAM,
     [ChainId.BSC]: USDC_BSC,
+    [ChainId.BASE_GOERLI]: USDC_BASE_GOERLI,
   };
   const TEST_ERC20_2: { [chainId in ChainId]: Token } = {
     [ChainId.MAINNET]: DAI_ON(1),
@@ -2555,6 +2558,7 @@ describe('quote for other networks', () => {
     [ChainId.GNOSIS]: USDC_ETHEREUM_GNOSIS,
     [ChainId.MOONBEAM]: WBTC_MOONBEAM,
     [ChainId.BSC]: USDT_BSC,
+    [ChainId.BASE_GOERLI]: USDT_BASE_GOERLI,
   };
 
   // TODO: Find valid pools/tokens on optimistic kovan and polygon mumbai. We skip those tests for now.

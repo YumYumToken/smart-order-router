@@ -604,7 +604,21 @@ export const WBTC_MOONBEAM = new Token(
   'WBTC',
   'Wrapped BTC bridged using Multichain'
 );
+export const USDC_BASE_GOERLI = new Token(
+  ChainId.BASE_GOERLI,
+  '0xCF29ec78Aa0E57beefAB81656ab7f698FD8CF566',
+  18,
+  'USDC',
+  'USDC'
+);
 
+export const USDT_BASE_GOERLI = new Token(
+  ChainId.BASE_GOERLI,
+  '0xa5E88EbBbB0f08aeDf1933fcFB1BE1d657838CA3',
+  18,
+  'USDT',
+  'USDT'
+);
 export class TokenProvider implements ITokenProvider {
   constructor(
     private chainId: ChainId,

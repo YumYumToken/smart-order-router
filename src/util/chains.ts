@@ -20,6 +20,7 @@ export enum ChainId {
   GNOSIS = 100,
   MOONBEAM = 1284,
   BSC = 56,
+  BASE_GOERLI = 84531,
 }
 
 // WIP: Gnosis, Moonbeam
@@ -40,6 +41,7 @@ export const SUPPORTED_CHAINS: ChainId[] = [
   ChainId.CELO_ALFAJORES,
   ChainId.CELO,
   ChainId.BSC,
+  ChainId.BASE_GOERLI,
   // Gnosis and Moonbeam don't yet have contracts deployed yet
 ];
 
@@ -112,6 +114,8 @@ export const ID_TO_CHAIN_ID = (id: number): ChainId => {
       return ChainId.GNOSIS;
     case 1284:
       return ChainId.MOONBEAM;
+    case 84531:
+      return ChainId.BASE_GOERLI;
     default:
       throw new Error(`Unknown chain id: ${id}`);
   }
@@ -136,6 +140,7 @@ export enum ChainName {
   GNOSIS = 'gnosis-mainnet',
   MOONBEAM = 'moonbeam-mainnet',
   BSC = 'bsc-mainnet',
+  BASE_GOERLI = 'base-goerli',
 }
 
 
@@ -220,6 +225,11 @@ export const NATIVE_NAMES_BY_ID: { [chainId: number]: string[] } = {
     'BNB',
     '0xeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeee',
   ],
+  [ChainId.BASE_GOERLI]: [
+    'ETH',
+    'ETHER',
+    '0xeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeee',
+  ],
 };
 
 export const NATIVE_CURRENCY: { [chainId: number]: NativeCurrencyName } = {
@@ -241,6 +251,7 @@ export const NATIVE_CURRENCY: { [chainId: number]: NativeCurrencyName } = {
   [ChainId.GNOSIS]: NativeCurrencyName.GNOSIS,
   [ChainId.MOONBEAM]: NativeCurrencyName.MOONBEAM,
   [ChainId.BSC]: NativeCurrencyName.BNB,
+  [ChainId.BASE_GOERLI]: NativeCurrencyName.ETHER,
 };
 
 export const ID_TO_NETWORK_NAME = (id: number): ChainName => {
@@ -281,6 +292,8 @@ export const ID_TO_NETWORK_NAME = (id: number): ChainName => {
       return ChainName.GNOSIS;
     case 1284:
       return ChainName.MOONBEAM;
+    case 84531:
+      return ChainName.BASE_GOERLI;
     default:
       throw new Error(`Unknown chain id: ${id}`);
   }
@@ -324,6 +337,8 @@ export const ID_TO_PROVIDER = (id: ChainId): string => {
       return process.env.JSON_RPC_PROVIDER_CELO_ALFAJORES!;
     case ChainId.BSC:
       return process.env.JSON_RPC_PROVIDER_BSC!;
+    case ChainId.BASE_GOERLI:
+      return process.env.JSON_RPC_PROVIDER_BASE_GOERLI!;
     default:
       throw new Error(`Chain id: ${id} not supported`);
   }
@@ -457,6 +472,13 @@ export const WRAPPED_NATIVE_CURRENCY: { [chainId in ChainId]: Token } = {
     18,
     'WGLMR',
     'Wrapped GLMR'
+  ),
+  [ChainId.BASE_GOERLI]: new Token(
+    ChainId.BASE_GOERLI,
+    '0x4200000000000000000000000000000000000006',
+    18,
+    'WETH',
+    'Wrapped Ether'
   ),
 };
 

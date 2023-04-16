@@ -7,14 +7,15 @@ import {
   DAI_BSC,
   DAI_MAINNET,
   ITokenProvider,
+  USDC_BASE_GOERLI,
   USDC_BSC,
   USDC_MAINNET,
+  USDT_BASE_GOERLI,
   USDT_BSC,
   USDT_MAINNET,
   WBTC_MAINNET,
   WMATIC_POLYGON,
   WMATIC_POLYGON_MUMBAI,
-
 } from '../../providers/token-provider';
 import { ChainId, WRAPPED_NATIVE_CURRENCY } from '../../util/chains';
 
@@ -64,6 +65,11 @@ export const BASES_TO_CHECK_TRADES_AGAINST = (
       USDC_BSC,
       USDT_BSC,
       BTC_BSC,
+    ],
+    [ChainId.BASE_GOERLI]: [
+      WRAPPED_NATIVE_CURRENCY[ChainId.BASE_GOERLI]!,
+      USDC_BASE_GOERLI,
+      USDT_BASE_GOERLI,
     ],
   };
 };
