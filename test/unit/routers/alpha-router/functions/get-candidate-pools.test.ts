@@ -1,4 +1,4 @@
-import { Token, TradeType } from '@uniswap/sdk-core';
+import { Token, TradeType } from '@yumyumswap/sdk-core';
 import { encodeSqrtRatioX96, FeeAmount, Pool } from '@yumyumswap/swap-sdk';
 import _ from 'lodash';
 import sinon from 'sinon';

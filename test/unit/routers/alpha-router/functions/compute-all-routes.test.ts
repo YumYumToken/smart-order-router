@@ -1,4 +1,4 @@
-import { Pair } from '@uniswap/v2-sdk';
+import { Pair } from '@yumyumswap/v2-sdk';
 import { encodeSqrtRatioX96, FeeAmount, Pool } from '@yumyumswap/swap-sdk';
 import {
   CurrencyAmount,

@@ -1,6 +1,6 @@
 import { Protocol } from '@yumyumswap/router-sdk';
-import { Percent } from '@uniswap/sdk-core';
-import { Pair } from '@uniswap/v2-sdk';
+import { Percent } from '@yumyumswap/sdk-core';
+import { Pair } from '@yumyumswap/v2-sdk';
 import { Pool } from '@yumyumswap/swap-sdk';
 import _ from 'lodash';
 

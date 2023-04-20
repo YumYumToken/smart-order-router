@@ -11,9 +11,9 @@ import {
   Percent,
   Token,
   TradeType,
-} from '@uniswap/sdk-core';
+} from '@yumyumswap/sdk-core';
 import { SwapOptions as UniversalRouterSwapOptions } from '@yumyumswap/universal-router-sdk';
-import { Route as V2RouteRaw } from '@uniswap/v2-sdk';
+import { Route as V2RouteRaw } from '@yumyumswap/v2-sdk';
 import {
   Pool,
   Position,

@@ -1,7 +1,7 @@
 import { BigNumber } from '@ethersproject/bignumber';
 import { Logger } from '@ethersproject/logger';
 import { SwapRouter, Trade } from '@yumyumswap/router-sdk';
-import { Currency, Token, TradeType } from '@uniswap/sdk-core';
+import { Currency, Token, TradeType } from '@yumyumswap/sdk-core';
 import { FeeAmount, MethodParameters, Pool, Route } from '@yumyumswap/swap-sdk';
 import _ from 'lodash';
 

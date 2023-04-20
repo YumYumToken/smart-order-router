@@ -2,7 +2,7 @@ import { BigNumber } from '@ethersproject/bignumber';
 import { BaseProvider, JsonRpcProvider } from '@ethersproject/providers';
 import DEFAULT_TOKEN_LIST from '@uniswap/default-token-list';
 import { Protocol, SwapRouter, Trade } from '@yumyumswap/router-sdk';
-import { Currency, Fraction, Token, TradeType } from '@uniswap/sdk-core';
+import { Currency, Fraction, Token, TradeType } from '@yumyumswap/sdk-core';
 import { TokenList } from '@uniswap/token-lists';
 import { Pool, Position, SqrtPriceMath, TickMath } from '@yumyumswap/swap-sdk';
 import retry from 'async-retry';

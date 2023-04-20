@@ -2,7 +2,7 @@ import { parseUnits } from '@ethersproject/units';
 import {
   Currency,
   CurrencyAmount as CurrencyAmountRaw,
-} from '@uniswap/sdk-core';
+} from '@yumyumswap/sdk-core';
 import { FeeAmount } from '@yumyumswap/swap-sdk';
 import JSBI from 'jsbi';
 

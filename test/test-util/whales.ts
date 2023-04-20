@@ -1,4 +1,4 @@
-import { Currency, Ether } from '@uniswap/sdk-core';
+import { Currency, Ether } from '@yumyumswap/sdk-core';
 import {
   CEUR_CELO,
   CEUR_CELO_ALFAJORES,

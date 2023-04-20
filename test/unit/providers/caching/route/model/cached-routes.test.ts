@@ -1,7 +1,11 @@
 import { Protocol } from '@yumyumswap/router-sdk';
-import { TradeType } from '@uniswap/sdk-core';
+import { TradeType } from '@yumyumswap/sdk-core';
 import { ChainId, V3RouteWithValidQuote } from '../../../../../../build/main';
-import { CachedRoutes, DAI_MAINNET as DAI, USDC_MAINNET as USDC } from '../../../../../../src';
+import {
+  CachedRoutes,
+  DAI_MAINNET as DAI,
+  USDC_MAINNET as USDC,
+} from '../../../../../../src';
 import { getV3RouteWithValidQuoteStub } from '../test-util/mocked-dependencies';
 
 describe('CachedRoutes', () => {
@@ -93,11 +97,15 @@ describe('CachedRoutes', () => {
         });
 
         it('returns true when blockNumber has advanced as many as blocksToLive number of blocks', () => {
-          expect(cachedRoutes.notExpired(blockNumber + cachedRoutes.blocksToLive)).toBeTruthy();
+          expect(
+            cachedRoutes.notExpired(blockNumber + cachedRoutes.blocksToLive)
+          ).toBeTruthy();
         });
 
         it('returns false when blockNumber has advanced one more than BTL', () => {
-          expect(cachedRoutes.notExpired(blockNumber + cachedRoutes.blocksToLive + 1)).toBeFalsy();
+          expect(
+            cachedRoutes.notExpired(blockNumber + cachedRoutes.blocksToLive + 1)
+          ).toBeFalsy();
         });
       });
     });

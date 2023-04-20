@@ -1,6 +1,6 @@
 import { Logger } from '@ethersproject/logger';
 import { flags } from '@oclif/command';
-import { Currency, Ether, Fraction, Percent } from '@uniswap/sdk-core';
+import { Currency, Ether, Fraction, Percent } from '@yumyumswap/sdk-core';
 import { Position } from '@yumyumswap/swap-sdk';
 import dotenv from 'dotenv';
 import {

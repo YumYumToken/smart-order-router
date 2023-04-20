@@ -1,5 +1,5 @@
 /* eslint-disable @typescript-eslint/no-non-null-assertion */
-import { Token } from '@uniswap/sdk-core';
+import { Token } from '@yumyumswap/sdk-core';
 import { FeeAmount, Pool } from '@yumyumswap/swap-sdk';
 import JSBI from 'jsbi';
 import _ from 'lodash';

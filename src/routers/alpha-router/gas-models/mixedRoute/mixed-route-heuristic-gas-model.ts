@@ -1,6 +1,6 @@
 import { BigNumber } from '@ethersproject/bignumber';
 import { partitionMixedRouteByProtocol } from '@yumyumswap/router-sdk';
-import { Pair } from '@uniswap/v2-sdk';
+import { Pair } from '@yumyumswap/v2-sdk';
 import { Pool } from '@yumyumswap/swap-sdk';
 import JSBI from 'jsbi';
 import _ from 'lodash';

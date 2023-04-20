@@ -9,7 +9,7 @@ import {
   Percent,
   Token,
   TradeType,
-} from '@uniswap/sdk-core';
+} from '@yumyumswap/sdk-core';
 import {
   AlphaRouter,
   AlphaRouterConfig,
@@ -74,7 +74,7 @@ import {
   UNIVERSAL_ROUTER_ADDRESS as UNIVERSAL_ROUTER_ADDRESS_BY_CHAIN,
 } from '@yumyumswap/universal-router-sdk';
 import { Permit2Permit } from '@yumyumswap/universal-router-sdk/dist/utils/permit2';
-import { Pair } from '@uniswap/v2-sdk';
+import { Pair } from '@yumyumswap/v2-sdk';
 import { encodeSqrtRatioX96, FeeAmount, Pool } from '@yumyumswap/swap-sdk';
 import bunyan from 'bunyan';
 import { BigNumber, providers, Wallet } from 'ethers';

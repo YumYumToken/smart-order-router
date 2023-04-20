@@ -1,7 +1,7 @@
 import { BigNumber } from '@ethersproject/bignumber';
-import { Token } from '@uniswap/sdk-core';
+import { Token } from '@yumyumswap/sdk-core';
 import { TokenList } from '@uniswap/token-lists';
-import { Pair } from '@uniswap/v2-sdk';
+import { Pair } from '@yumyumswap/v2-sdk';
 import { encodeSqrtRatioX96, FeeAmount, Pool } from '@yumyumswap/swap-sdk';
 import _ from 'lodash';
 import {

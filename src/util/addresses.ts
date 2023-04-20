@@ -1,4 +1,4 @@
-import { Token } from '@uniswap/sdk-core';
+import { Token } from '@yumyumswap/sdk-core';
 import { FACTORY_ADDRESS } from '@yumyumswap/swap-sdk';
 
 import { ChainId, NETWORKS_WITH_SAME_UNISWAP_ADDRESSES } from './chains';

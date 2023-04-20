@@ -4,12 +4,12 @@ import {
   SwapRouter as SwapRouter02,
   Trade,
 } from '@yumyumswap/router-sdk';
-import { Currency, TradeType } from '@uniswap/sdk-core';
+import { Currency, TradeType } from '@yumyumswap/sdk-core';
 import {
   SwapRouter as UniveralRouter,
   UNIVERSAL_ROUTER_ADDRESS,
 } from '@yumyumswap/universal-router-sdk';
-import { Route as V2RouteRaw } from '@uniswap/v2-sdk';
+import { Route as V2RouteRaw } from '@yumyumswap/v2-sdk';
 import { Route as V3RouteRaw } from '@yumyumswap/swap-sdk';
 import _ from 'lodash';
 

@@ -1,6 +1,6 @@
 import { BigNumber } from '@ethersproject/bignumber';
 import { Protocol } from '@yumyumswap/router-sdk';
-import { Token, TradeType } from '@uniswap/sdk-core';
+import { Token, TradeType } from '@yumyumswap/sdk-core';
 import { Pool } from '@yumyumswap/swap-sdk';
 import _ from 'lodash';
 

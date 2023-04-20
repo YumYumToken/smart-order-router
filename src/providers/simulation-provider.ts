@@ -1,5 +1,5 @@
 import { JsonRpcProvider } from '@ethersproject/providers';
-import { TradeType } from '@uniswap/sdk-core';
+import { TradeType } from '@yumyumswap/sdk-core';
 import { PERMIT2_ADDRESS } from '@yumyumswap/universal-router-sdk';
 import { BigNumber } from 'ethers/lib/ethers';
 

@@ -1,4 +1,4 @@
-import { Token } from '@uniswap/sdk-core';
+import { Token } from '@yumyumswap/sdk-core';
 import { FeeAmount, Pool } from '@yumyumswap/swap-sdk';
 import _ from 'lodash';
 

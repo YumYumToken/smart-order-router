@@ -1,5 +1,5 @@
 import { Protocol } from '@yumyumswap/router-sdk';
-import { Token } from '@uniswap/sdk-core';
+import { Token } from '@yumyumswap/sdk-core';
 
 import { MixedRoute, V2Route, V3Route } from '../../../../routers';
 

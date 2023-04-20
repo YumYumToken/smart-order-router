@@ -1,5 +1,5 @@
-import { Token } from '@uniswap/sdk-core';
-import { Pair } from '@uniswap/v2-sdk';
+import { Token } from '@yumyumswap/sdk-core';
+import { Pair } from '@yumyumswap/v2-sdk';
 import { Pool } from '@yumyumswap/swap-sdk';
 
 import { log } from '../../../util/log';
