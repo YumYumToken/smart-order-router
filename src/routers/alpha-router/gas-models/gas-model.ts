@@ -14,6 +14,7 @@ import {
   DAI_OPTIMISM_GOERLI,
   DAI_OPTIMISTIC_KOVAN,
   DAI_POLYGON_MUMBAI,
+  DAI_PULSE,
   DAI_RINKEBY_1,
   DAI_RINKEBY_2,
   DAI_ROPSTEN,
@@ -30,6 +31,7 @@ import {
   USDC_OPTIMISM_GOERLI,
   USDC_OPTIMISTIC_KOVAN,
   USDC_POLYGON,
+  USDC_PULSE,
   USDC_ROPSTEN,
   USDT_ARBITRUM,
   USDT_ARBITRUM_RINKEBY,
@@ -41,6 +43,7 @@ import {
   USDT_OPTIMISM,
   USDT_OPTIMISM_GOERLI,
   USDT_OPTIMISTIC_KOVAN,
+  USDT_PULSE,
   USDT_ROPSTEN,
   WBTC_GÖRLI,
 } from '../../../providers/token-provider';
@@ -88,6 +91,7 @@ export const usdGasTokensByChain: { [chainId in ChainId]?: Token[] } = {
   [ChainId.MOONBEAM]: [USDC_MOONBEAM],
   [ChainId.BSC]: [USDT_BSC, USDC_BSC, DAI_BSC],
   [ChainId.BASE_GOERLI]: [USDT_BASE_GOERLI, USDC_BASE_GOERLI],
+  [ChainId.PULSE]: [USDT_PULSE, USDC_PULSE, DAI_PULSE],
 };
 
 export type L1ToL2GasCosts = {

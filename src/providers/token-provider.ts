@@ -619,6 +619,56 @@ export const USDT_BASE_GOERLI = new Token(
   'USDT',
   'USDT'
 );
+export const USDC_PULSE = new Token(
+  ChainId.PULSE,
+  '0x15D38573d2feeb82e7ad5187aB8c1D52810B1f07',
+  6,
+  'USDC',
+  'USD Coin from Ethereum'
+);
+
+export const USDT_PULSE = new Token(
+  ChainId.PULSE,
+  '0x0Cb6F5a34ad42ec934882A05265A7d5F59b51A2f',
+  6,
+  'USDT',
+  'Tether USD from Ethereum'
+);
+export const DAI_PULSE = new Token(
+  ChainId.PULSE,
+  '0xefD766cCb38EaF1dfd701853BFCe31359239F305',
+  18,
+  'DAI',
+  'Dai Stablecoin from Ethereum'
+);
+export const PLSX_PULSE = new Token(
+  ChainId.PULSE,
+  '0x95B303987A60C71504D99Aa1b13B4DA07b0790ab',
+  18,
+  'PLSX',
+  'PulseX'
+);
+export const HEX_PULSE = new Token(
+  ChainId.PULSE,
+  '0x2b591e99afE9f32eAA6214f7B7629768c40Eeb39',
+  8,
+  'HEX',
+  'HEX'
+);
+export const WBTC_PULSE = new Token(
+  ChainId.PULSE,
+  '0xb17D901469B9208B17d916112988A3FeD19b5cA1',
+  8,
+  'WBTC',
+  'Wrapped BTC from ethereum'
+);
+export const WETH_PULSE = new Token(
+  ChainId.PULSE,
+  '0x02DcdD04e3F455D838cd1249292C58f3B79e3C3C',
+  18,
+  'WETH',
+  'Wrapped ETH from ethereum'
+);
 export class TokenProvider implements ITokenProvider {
   constructor(
     private chainId: ChainId,

@@ -20,6 +20,7 @@ export enum ChainId {
   MOONBEAM = 1284,
   BSC = 56,
   BASE_GOERLI = 84531,
+  PULSE = 369,
 }
 
 // WIP: Gnosis, Moonbeam
@@ -41,6 +42,7 @@ export const SUPPORTED_CHAINS: ChainId[] = [
   ChainId.CELO,
   ChainId.BSC,
   ChainId.BASE_GOERLI,
+  ChainId.PULSE,
   // Gnosis and Moonbeam don't yet have contracts deployed yet
 ];
 
@@ -115,6 +117,8 @@ export const ID_TO_CHAIN_ID = (id: number): ChainId => {
       return ChainId.MOONBEAM;
     case 84531:
       return ChainId.BASE_GOERLI;
+    case 369:
+      return ChainId.PULSE;
     default:
       throw new Error(`Unknown chain id: ${id}`);
   }
@@ -140,6 +144,7 @@ export enum ChainName {
   MOONBEAM = 'moonbeam-mainnet',
   BSC = 'bsc-mainnet',
   BASE_GOERLI = 'base-goerli',
+  PULSE = 'pulse',
 }
 
 export enum NativeCurrencyName {
@@ -150,6 +155,7 @@ export enum NativeCurrencyName {
   GNOSIS = 'XDAI',
   MOONBEAM = 'GLMR',
   BNB = 'BNB',
+  PLS = 'PLS',
 }
 export const NATIVE_NAMES_BY_ID: { [chainId: number]: string[] } = {
   [ChainId.MAINNET]: [
@@ -222,6 +228,11 @@ export const NATIVE_NAMES_BY_ID: { [chainId: number]: string[] } = {
     'ETHER',
     '0xeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeee',
   ],
+  [ChainId.PULSE]: [
+    'PLS',
+    'PULSE',
+    '0xeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeee',
+  ],
 };
 
 export const NATIVE_CURRENCY: { [chainId: number]: NativeCurrencyName } = {
@@ -244,6 +255,7 @@ export const NATIVE_CURRENCY: { [chainId: number]: NativeCurrencyName } = {
   [ChainId.MOONBEAM]: NativeCurrencyName.MOONBEAM,
   [ChainId.BSC]: NativeCurrencyName.BNB,
   [ChainId.BASE_GOERLI]: NativeCurrencyName.ETHER,
+  [ChainId.PULSE]: NativeCurrencyName.PLS,
 };
 
 export const ID_TO_NETWORK_NAME = (id: number): ChainName => {
@@ -286,6 +298,8 @@ export const ID_TO_NETWORK_NAME = (id: number): ChainName => {
       return ChainName.MOONBEAM;
     case 84531:
       return ChainName.BASE_GOERLI;
+    case 369:
+      return ChainName.PULSE;
     default:
       throw new Error(`Unknown chain id: ${id}`);
   }
@@ -331,6 +345,8 @@ export const ID_TO_PROVIDER = (id: ChainId): string => {
       return process.env.JSON_RPC_PROVIDER_BSC!;
     case ChainId.BASE_GOERLI:
       return process.env.JSON_RPC_PROVIDER_BASE_GOERLI!;
+    case ChainId.PULSE:
+      return process.env.JSON_RPC_PROVIDER_PULSE!;
     default:
       throw new Error(`Chain id: ${id} not supported`);
   }
@@ -472,6 +488,13 @@ export const WRAPPED_NATIVE_CURRENCY: { [chainId in ChainId]: Token } = {
     'WETH',
     'Wrapped Ether'
   ),
+  [ChainId.PULSE]: new Token(
+    ChainId.PULSE,
+    '0xA1077a294dDE1B09bB078844df40758a5D0f9a27',
+    18,
+    'WPLS',
+    'Wrapped Pulse'
+  ),
 };
 
 function isMatic(
@@ -574,6 +597,28 @@ class BscNativeCurrency extends NativeCurrency {
   }
 }
 
+function isPulse(chainId: number): chainId is ChainId.PULSE {
+  return chainId === ChainId.PULSE;
+}
+class PulseNativeCurrency extends NativeCurrency {
+  equals(other: Currency): boolean {
+    return other.isNative && other.chainId === this.chainId;
+  }
+
+  get wrapped(): Token {
+    if (!isPulse(this.chainId)) throw new Error('Not pulse');
+    const nativeCurrency = WRAPPED_NATIVE_CURRENCY[this.chainId];
+    if (nativeCurrency) {
+      return nativeCurrency;
+    }
+    throw new Error(`Does not support this chain ${this.chainId}`);
+  }
+
+  public constructor(chainId: number) {
+    if (!isPulse(chainId)) throw new Error('Not pulse');
+    super(chainId, 18, 'PLS', 'PULSE');
+  }
+}
 function isMoonbeam(chainId: number): chainId is ChainId.MOONBEAM {
   return chainId === ChainId.MOONBEAM;
 }
@@ -630,6 +675,8 @@ export function nativeOnChain(chainId: number): NativeCurrency {
     cachedNativeCurrency[chainId] = new MoonbeamNativeCurrency(chainId);
   else if (isBsc(chainId))
     cachedNativeCurrency[chainId] = new BscNativeCurrency(chainId);
+  else if (isPulse(chainId))
+    cachedNativeCurrency[chainId] = new PulseNativeCurrency(chainId);
   else cachedNativeCurrency[chainId] = ExtendedEther.onChain(chainId);
 
   return cachedNativeCurrency[chainId]!;

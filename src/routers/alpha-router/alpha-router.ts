@@ -418,6 +418,7 @@ export class AlphaRouter
         case ChainId.OPTIMISM_GOERLI:
         case ChainId.OPTIMISTIC_KOVAN:
         case ChainId.BASE_GOERLI:
+        case ChainId.PULSE:
           this.onChainQuoteProvider = new OnChainQuoteProvider(
             chainId,
             provider,

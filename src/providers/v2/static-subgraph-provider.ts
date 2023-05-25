@@ -50,6 +50,7 @@ const BASES_TO_CHECK_TRADES_AGAINST: ChainTokenList = {
   [ChainId.MOONBEAM]: [],
   [ChainId.BSC]: [],
   [ChainId.BASE_GOERLI]: [],
+  [ChainId.PULSE]: [],
 };
 
 /**
