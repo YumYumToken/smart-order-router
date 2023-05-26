@@ -199,7 +199,7 @@ export class TenderlySimulator extends Simulator {
       const erc20Interface = Erc20__factory.createInterface();
       const approvePermit2Calldata = erc20Interface.encodeFunctionData(
         'approve',
-        [PERMIT2_ADDRESS, MaxUint256]
+        [PERMIT2_ADDRESS(chainId), MaxUint256]
       );
 
       // We are unsure if the users calldata contains a permit or not. We just
@@ -226,7 +226,7 @@ export class TenderlySimulator extends Simulator {
         network_id: chainId,
         gas_estimate: true,
         input: approveUniversalRouterCallData,
-        to: PERMIT2_ADDRESS,
+        to: PERMIT2_ADDRESS(chainId),
         value: '0',
         from: fromAddress,
       };

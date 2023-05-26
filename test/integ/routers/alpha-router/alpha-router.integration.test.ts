@@ -213,14 +213,14 @@ describe('alpha router integration', () => {
       // because there is custom logic built in for handling USDT and other checks
       tokenInBefore = await getBalanceAndApprove(
         alice,
-        PERMIT2_ADDRESS,
+        PERMIT2_ADDRESS(tokenIn.chainId),
         tokenIn
       );
       const MAX_UINT160 = '0xffffffffffffffffffffffffffffffffffffffff';
 
       // If not using permit do a regular approval allowing narwhal max balance.
       if (!permit) {
-        const aliceP2 = Permit2__factory.connect(PERMIT2_ADDRESS, alice);
+        const aliceP2 = Permit2__factory.connect(PERMIT2_ADDRESS(tokenIn.chainId), alice);
         const approveNarwhal = await aliceP2.approve(
           tokenIn.wrapped.address,
           UNIVERSAL_ROUTER_ADDRESS,
@@ -664,7 +664,7 @@ describe('alpha router integration', () => {
 
           const { domain, types, values } = AllowanceTransfer.getPermitData(
             permit,
-            PERMIT2_ADDRESS,
+            PERMIT2_ADDRESS(tokenIn.chainId),
             1
           );
 
@@ -740,7 +740,7 @@ describe('alpha router integration', () => {
 
           const { domain, types, values } = AllowanceTransfer.getPermitData(
             permit,
-            PERMIT2_ADDRESS,
+            PERMIT2_ADDRESS(tokenIn.chainId),
             1
           );
 
@@ -950,7 +950,7 @@ describe('alpha router integration', () => {
 
           const { domain, types, values } = AllowanceTransfer.getPermitData(
             permit,
-            PERMIT2_ADDRESS,
+            PERMIT2_ADDRESS(tokenIn.chainId),
             1
           );
 
@@ -1519,7 +1519,7 @@ describe('alpha router integration', () => {
 
               const { domain, types, values } = AllowanceTransfer.getPermitData(
                 permit,
-                PERMIT2_ADDRESS,
+                PERMIT2_ADDRESS(tokenIn.chainId),
                 1
               );
 
