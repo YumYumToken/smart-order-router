@@ -3,7 +3,7 @@ import { BigNumber } from '@ethersproject/bignumber';
 import { JsonRpcProvider } from '@ethersproject/providers';
 import { Command, flags } from '@oclif/command';
 import { ParserOutput } from '@oclif/parser/lib/parse';
-import DEFAULT_TOKEN_LIST from '@uniswap/default-token-list';
+import DEFAULT_TOKEN_LIST from '@yumyumswap/default-token-list';
 import { Currency, CurrencyAmount, Token } from '@yumyumswap/sdk-core';
 import { MethodParameters } from '@yumyumswap/swap-sdk';
 import bunyan, { default as Logger } from 'bunyan';

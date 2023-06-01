@@ -1,6 +1,6 @@
 /* eslint-disable @typescript-eslint/no-non-null-assertion */
 import { Token } from '@yumyumswap/sdk-core';
-import { TokenInfo, TokenList } from '@uniswap/token-lists';
+import { TokenInfo, TokenList } from '@yumyumswap/token-lists';
 import axios from 'axios';
 import _ from 'lodash';
 
