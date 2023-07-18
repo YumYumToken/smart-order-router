@@ -6,8 +6,8 @@ import {
   Token,
   TradeType,
 } from '@yumyumswap/sdk-core';
-import { Pair } from '@yumyumswap/v2-sdk/dist/entities';
 import { FeeAmount, Pool } from '@yumyumswap/swap-sdk';
+import { Pair } from '@yumyumswap/v2-sdk/dist/entities';
 import _ from 'lodash';
 
 import { IV2PoolProvider } from '../providers';

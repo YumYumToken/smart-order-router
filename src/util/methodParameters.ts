@@ -5,12 +5,12 @@ import {
   Trade,
 } from '@yumyumswap/router-sdk';
 import { Currency, TradeType } from '@yumyumswap/sdk-core';
+import { Route as V3RouteRaw } from '@yumyumswap/swap-sdk';
 import {
   SwapRouter as UniveralRouter,
   UNIVERSAL_ROUTER_ADDRESS,
 } from '@yumyumswap/universal-router-sdk';
 import { Route as V2RouteRaw } from '@yumyumswap/v2-sdk';
-import { Route as V3RouteRaw } from '@yumyumswap/swap-sdk';
 import _ from 'lodash';
 
 import {
@@ -19,9 +19,9 @@ import {
   MethodParameters,
   MixedRouteWithValidQuote,
   RouteWithValidQuote,
+  SWAP_ROUTER_02_ADDRESSES,
   SwapOptions,
   SwapType,
-  SWAP_ROUTER_02_ADDRESSES,
   V2RouteWithValidQuote,
   V3RouteWithValidQuote,
 } from '..';

@@ -61,8 +61,11 @@ import {
   WNATIVE_ON,
   USDC_BASE_GOERLI,
   USDT_BASE_GOERLI,
+  USDT_BASE,
   USDC_PULSE,
   USDT_PULSE,
+  WRAPPED_NATIVE_CURRENCY,
+  USDC_BASE,
 } from '../../../../src';
 import { WHALES } from '../../../test-util/whales';
 
@@ -75,7 +78,7 @@ import {
   PERMIT2_ADDRESS,
   UNIVERSAL_ROUTER_ADDRESS as UNIVERSAL_ROUTER_ADDRESS_BY_CHAIN,
 } from '@yumyumswap/universal-router-sdk';
-import { Permit2Permit } from '@yumyumswap/universal-router-sdk/dist/utils/permit2';
+// import { Permit2Permit } from '@yumyumswap/universal-router-sdk/dist/utils/permit2';
 import { Pair } from '@yumyumswap/v2-sdk';
 import { encodeSqrtRatioX96, FeeAmount, Pool } from '@yumyumswap/swap-sdk';
 import bunyan from 'bunyan';
@@ -86,6 +89,7 @@ import NodeCache from 'node-cache';
 import { DEFAULT_ROUTING_CONFIG_BY_CHAIN } from '../../../../src/routers/alpha-router/config';
 import { Permit2__factory } from '../../../../src/types/other/factories/Permit2__factory';
 import { getBalanceAndApprove } from '../../../test-util/getBalanceAndApprove';
+import { Permit2Permit } from '@yumyumswap/universal-router-sdk/dist/utils/inputTokens';
 const FORK_BLOCK = 16075500;
 const UNIVERSAL_ROUTER_ADDRESS = UNIVERSAL_ROUTER_ADDRESS_BY_CHAIN(1);
 const SLIPPAGE = new Percent(15, 100); // 5% or 10_000?
@@ -220,7 +224,10 @@ describe('alpha router integration', () => {
 
       // If not using permit do a regular approval allowing narwhal max balance.
       if (!permit) {
-        const aliceP2 = Permit2__factory.connect(PERMIT2_ADDRESS(tokenIn.chainId), alice);
+        const aliceP2 = Permit2__factory.connect(
+          PERMIT2_ADDRESS(tokenIn.chainId),
+          alice
+        );
         const approveNarwhal = await aliceP2.approve(
           tokenIn.wrapped.address,
           UNIVERSAL_ROUTER_ADDRESS,
@@ -2540,6 +2547,7 @@ describe('quote for other networks', () => {
     [ChainId.MOONBEAM]: WBTC_MOONBEAM,
     [ChainId.BSC]: USDC_BSC,
     [ChainId.BASE_GOERLI]: USDC_BASE_GOERLI,
+    [ChainId.BASE]: USDC_BASE,
     [ChainId.PULSE]: USDC_PULSE,
   };
   const TEST_ERC20_2: { [chainId in ChainId]: Token } = {
@@ -2562,6 +2570,7 @@ describe('quote for other networks', () => {
     [ChainId.MOONBEAM]: WBTC_MOONBEAM,
     [ChainId.BSC]: USDT_BSC,
     [ChainId.BASE_GOERLI]: USDT_BASE_GOERLI,
+    [ChainId.BASE]: USDT_BASE,
     [ChainId.PULSE]: USDT_PULSE,
   };
 

@@ -1,11 +1,12 @@
 import { Protocol } from '@yumyumswap/router-sdk';
 import { Percent } from '@yumyumswap/sdk-core';
-import { Pair } from '@yumyumswap/v2-sdk';
 import { Pool } from '@yumyumswap/swap-sdk';
+import { Pair } from '@yumyumswap/v2-sdk';
 import _ from 'lodash';
 
 import { RouteWithValidQuote } from '../routers/alpha-router';
 import { MixedRoute, V2Route, V3Route } from '../routers/router';
+
 import { V3_CORE_FACTORY_ADDRESSES } from './addresses';
 
 import { CurrencyAmount } from '.';

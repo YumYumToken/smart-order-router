@@ -23,6 +23,7 @@ export const BASE_SWAP_COST = (id: ChainId): BigNumber => {
     case ChainId.ARBITRUM_GOERLI:
     case ChainId.BASE_GOERLI:
     case ChainId.PULSE:
+    case ChainId.BASE:
       return BigNumber.from(5000);
     case ChainId.POLYGON:
     case ChainId.POLYGON_MUMBAI:
@@ -52,6 +53,7 @@ export const COST_PER_INIT_TICK = (id: ChainId): BigNumber => {
     case ChainId.OPTIMISM_GOERLI:
     case ChainId.OPTIMISTIC_KOVAN:
     case ChainId.BASE_GOERLI:
+    case ChainId.BASE:
     case ChainId.PULSE:
       return BigNumber.from(31000);
     case ChainId.ARBITRUM_ONE:
@@ -83,6 +85,7 @@ export const COST_PER_HOP = (id: ChainId): BigNumber => {
     case ChainId.OPTIMISM_GOERLI:
     case ChainId.OPTIMISTIC_KOVAN:
     case ChainId.BASE_GOERLI:
+    case ChainId.BASE:
     case ChainId.PULSE:
       return BigNumber.from(80000);
     case ChainId.ARBITRUM_ONE:

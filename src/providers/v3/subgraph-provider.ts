@@ -63,6 +63,8 @@ const SUBGRAPH_URL_BY_CHAIN: { [chainId in ChainId]?: string } = {
     'https://api.thegraph.com/subgraphs/name/ilyamk/uniswap-v3---bnb-chain',
   [ChainId.BASE_GOERLI]:
     'https://api.studio.thegraph.com/query/45375/yumyumswap-subgraph/v0.1.5',
+  [ChainId.BASE]:
+    'https://api.studio.thegraph.com/query/49959/yumyum-subgraph-base/v0.0.1',
   [ChainId.PULSE]:
     'https://subgraph-pulse.yumyumswap.com/subgraphs/name/yumyumtoken/yumyumswap',
 };

@@ -619,6 +619,20 @@ export const USDT_BASE_GOERLI = new Token(
   'USDT',
   'USDT'
 );
+export const USDC_BASE = new Token(
+  ChainId.BASE,
+  '0xe5417a52d9535f0069058324958bf4d89e2e38a1',
+  18,
+  'USDC',
+  'USDC'
+);
+export const USDT_BASE = new Token(
+  ChainId.BASE,
+  '0x4528be9055935c213020085656ad3c1e99bf1f32',
+  18,
+  'USDT',
+  'USDT'
+);
 export const USDC_PULSE = new Token(
   ChainId.PULSE,
   '0x15D38573d2feeb82e7ad5187aB8c1D52810B1f07',

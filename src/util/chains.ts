@@ -20,6 +20,7 @@ export enum ChainId {
   MOONBEAM = 1284,
   BSC = 56,
   BASE_GOERLI = 84531,
+  BASE = 8453,
   PULSE = 369,
 }
 
@@ -42,6 +43,7 @@ export const SUPPORTED_CHAINS: ChainId[] = [
   ChainId.CELO,
   ChainId.BSC,
   ChainId.BASE_GOERLI,
+  ChainId.BASE,
   ChainId.PULSE,
   // Gnosis and Moonbeam don't yet have contracts deployed yet
 ];
@@ -117,6 +119,8 @@ export const ID_TO_CHAIN_ID = (id: number): ChainId => {
       return ChainId.MOONBEAM;
     case 84531:
       return ChainId.BASE_GOERLI;
+    case 8453:
+      return ChainId.BASE;
     case 369:
       return ChainId.PULSE;
     default:
@@ -144,6 +148,7 @@ export enum ChainName {
   MOONBEAM = 'moonbeam-mainnet',
   BSC = 'bsc-mainnet',
   BASE_GOERLI = 'base-goerli',
+  BASE = 'base',
   PULSE = 'pulse',
 }
 
@@ -228,6 +233,11 @@ export const NATIVE_NAMES_BY_ID: { [chainId: number]: string[] } = {
     'ETHER',
     '0xeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeee',
   ],
+  [ChainId.BASE]: [
+    'ETH',
+    'ETHER',
+    '0xeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeee',
+  ],
   [ChainId.PULSE]: [
     'PLS',
     'PULSE',
@@ -255,6 +265,7 @@ export const NATIVE_CURRENCY: { [chainId: number]: NativeCurrencyName } = {
   [ChainId.MOONBEAM]: NativeCurrencyName.MOONBEAM,
   [ChainId.BSC]: NativeCurrencyName.BNB,
   [ChainId.BASE_GOERLI]: NativeCurrencyName.ETHER,
+  [ChainId.BASE]: NativeCurrencyName.ETHER,
   [ChainId.PULSE]: NativeCurrencyName.PLS,
 };
 
@@ -298,6 +309,8 @@ export const ID_TO_NETWORK_NAME = (id: number): ChainName => {
       return ChainName.MOONBEAM;
     case 84531:
       return ChainName.BASE_GOERLI;
+    case 8453:
+      return ChainName.BASE;
     case 369:
       return ChainName.PULSE;
     default:
@@ -345,6 +358,8 @@ export const ID_TO_PROVIDER = (id: ChainId): string => {
       return process.env.JSON_RPC_PROVIDER_BSC!;
     case ChainId.BASE_GOERLI:
       return process.env.JSON_RPC_PROVIDER_BASE_GOERLI!;
+    case ChainId.BASE:
+      return process.env.JSON_RPC_PROVIDER_BASE!;
     case ChainId.PULSE:
       return process.env.JSON_RPC_PROVIDER_PULSE!;
     default:
@@ -483,6 +498,13 @@ export const WRAPPED_NATIVE_CURRENCY: { [chainId in ChainId]: Token } = {
   ),
   [ChainId.BASE_GOERLI]: new Token(
     ChainId.BASE_GOERLI,
+    '0x4200000000000000000000000000000000000006',
+    18,
+    'WETH',
+    'Wrapped Ether'
+  ),
+  [ChainId.BASE]: new Token(
+    ChainId.BASE,
     '0x4200000000000000000000000000000000000006',
     18,
     'WETH',

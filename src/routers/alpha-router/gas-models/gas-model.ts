@@ -20,6 +20,7 @@ import {
   DAI_ROPSTEN,
   USDC_ARBITRUM,
   USDC_ARBITRUM_GOERLI,
+  USDC_BASE,
   USDC_BASE_GOERLI,
   USDC_BSC,
   USDC_ETHEREUM_GNOSIS,
@@ -35,6 +36,7 @@ import {
   USDC_ROPSTEN,
   USDT_ARBITRUM,
   USDT_ARBITRUM_RINKEBY,
+  USDT_BASE,
   USDT_BASE_GOERLI,
   USDT_BSC,
   USDT_GÖRLI,
@@ -91,6 +93,8 @@ export const usdGasTokensByChain: { [chainId in ChainId]?: Token[] } = {
   [ChainId.MOONBEAM]: [USDC_MOONBEAM],
   [ChainId.BSC]: [USDT_BSC, USDC_BSC, DAI_BSC],
   [ChainId.BASE_GOERLI]: [USDT_BASE_GOERLI, USDC_BASE_GOERLI],
+  // TODO : need to add USD token
+  [ChainId.BASE]: [USDT_BASE, USDC_BASE],
   [ChainId.PULSE]: [USDT_PULSE, USDC_PULSE, DAI_PULSE],
 };
 
