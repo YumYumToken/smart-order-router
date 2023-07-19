@@ -1,6 +1,6 @@
 {
   "name": "@yumyumswap/smart-order-router",
-  "version": "5.0.1",
+  "version": "5.0.2",
   "description": "YumYumSwap Smart Order Router",
   "main": "build/main/index.js",
   "typings": "build/main/index.d.ts",
@@ -33,7 +33,7 @@
     "node": ">=10"
   },
   "dependencies": {
-    "@yumyumswap/default-token-list": "^5.0.1",
+    "@yumyumswap/default-token-list": "^5.0.2",
     "@uniswap/permit2-sdk": "^1.2.0",
     "@yumyumswap/router-sdk": "^5.0.1",
     "@yumyumswap/swap-router-contracts": "^5.0.1",
